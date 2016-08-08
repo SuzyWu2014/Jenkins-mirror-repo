@@ -1,0 +1,6 @@
+---
+jenkins_job_name: XE_github_repos_update
+jenkins_job_path: "{{ jenkins_home }}jobs/{{ jenkins_job_name }}/"
+jenkins_workspace_path: "{{ jenkins_home }}workspace/{{ jenkins_job_name }}/"
+
+dest_github: git@github.somewhere:someboby

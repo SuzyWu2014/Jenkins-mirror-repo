@@ -1,0 +1,3 @@
+https://github.com/osu-mist/id-images-api.git
+https://github.com/osu-mist/hubot.git
+https://github.com/osu-mist/class-search-api.git
