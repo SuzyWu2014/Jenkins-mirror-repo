@@ -1,4 +1,0 @@
-# pack-refs with: peeled fully-peeled 
-340b816db758b77c608c756d54f91ae6559f6acb refs/heads/develop
-19d7901d809a91992c08c5d6e88384f38e85d503 refs/heads/feature/CO-487-update-apis-to-use-logger
-1c113870b780dcf03424be6882727fe50fe26fdc refs/heads/master

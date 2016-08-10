@@ -1,6 +1,0 @@
-# pack-refs with: peeled fully-peeled 
-63c22a21865607346d95ddcef44ed4427493edc8 refs/heads/feature/ECSPCS-255-hubot-faq
-7c7138ea9db62f81bb29240fccc986ee31c021f8 refs/heads/feature/ECSPCS-261-hipchat-rooms
-559c85e8a1c886d45ffc18794ea85c9abe313cd0 refs/heads/feature/ECSPCS-262-more-scripts
-5f2f52fe26e60c48d8d5d49caa3191ba3b0ed2b1 refs/heads/feature/fix-hipchat-disconnect-crash
-7e9d0ff8066ada4ffc99c3b80931d4ab2df35bf3 refs/heads/master
