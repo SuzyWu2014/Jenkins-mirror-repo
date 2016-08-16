@@ -1,24 +1,38 @@
 ---
-  - name: create jenkins jobs directory
+  - name: create jobs directory for {{ jenkins_job_name }}
     file:
       path: "{{ jenkins_job_path}}"
       state: directory
       owner: jenkins
       group: jenkins
 
-  - name: create jenkins workplace directory
+  - name: create workplace directory for {{ jenkins_job_name }}
     file:
         path: "{{ jenkins_workspace_path }}"
         state: directory
         owner: jenkins
         group: jenkins
 
-  - name: upload file - source repos
+  - name: upload files - source repos
     copy:
-      src: files/src_repos.txt
-      dest: "{{ jenkins_workspace_path }}src_repos.txt"
+      src: files/{{ item }}.txt
+      dest: "{{ jenkins_workspace_path }}{{ item }}.txt"
       owner: jenkins
       group: jenkins
+      mode: 0644
+    with_items:
+      - src_repos
+      - pages_repos
+
+  - name: upload script
+    copy:
+      src: files/{{ item }}.sh
+      dest: "{{ jenkins_workspace_path }}{{ item }}.sh"
+      owner: jenkins
+      group: jenkins
+      mode: 0755
+    with_items:
+      - update_repo
 
   - name: set up {{ jenkins_job_name }} config file
     template:
@@ -27,7 +41,6 @@
       owner: jenkins
       group: jenkins
       mode: 0644
-      force: no
 
   - name: restart jenkins
     service:

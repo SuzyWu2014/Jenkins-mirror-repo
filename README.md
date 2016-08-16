@@ -10,4 +10,9 @@ This jenkins job will mirror given github repos to a targeted github account and
 ## Configuration
 
 1. update `files/src_repos.txt` with your source repos
-2. edit `defaults/main.yml`, replace `dest_github` with your destination github repo
+2. update `files/pages_repos.txt` with your source repos whose name will be replaced with `pages-[repo-name]`
+3. edit `defaults/main.yml`, replace `xe_dest_github` with your destination github repo and `xe_src_github` with your source github repo
+
+## Note
+
+1. Keep a blank line at the end of the `src_repos.txt` and `pages_repos.txt`.

@@ -22,27 +22,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>
-#!/bin/bash
-
-DEST={{ dest_github }}
-REMOTE_NAME=ecs
-
-cat src_repos.txt | while read REPO; do
-    REPO_NAME=${REPO##*/}
-    if [ -d $REPO_NAME ]; then
-        cd $REPO_NAME
-        git fetch -p origin
-        git push --mirror $REMOTE_NAME
-        cd ..
-    else
-        git clone --bare $REPO
-        cd $REPO_NAME
-        git remote add $REMOTE_NAME $DEST/$REPO_NAME
-        git push --mirror $REMOTE_NAME
-        cd ..
-    fi
-done
+      <command>./update_repo.sh {{ xe_src_github }} {{ xe_dest_github }}
       </command>
     </hudson.tasks.Shell>
   </builders>
